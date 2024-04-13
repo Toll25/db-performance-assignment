@@ -78,6 +78,7 @@ async fn send_to_postgres(
     progress_bar.set_style(
         ProgressStyle::default_bar()
             .template("[{elapsed_precise}] [{bar:40}] {pos}/{len} PostgreSQL insertions ({eta})")
+            .unwrap()
             .progress_chars("=> "),
     );
 
@@ -129,6 +130,7 @@ async fn send_to_mongodb(
         progress_bar.set_style(
             ProgressStyle::default_bar()
                 .template("[{elapsed_precise}] [{bar:40}] {pos}/{len} MongoDB insertions ({eta})")
+                .unwrap()
                 .progress_chars("=> "),
         );
 
@@ -176,7 +178,9 @@ async fn main() {
     let progress_bar = ProgressBar::new(num_chunks);
     progress_bar.set_style(
         ProgressStyle::default_bar()
-            .template("[{elapsed_precise}] [{bar:40}] {pos}/{len} chunks generated ({eta})"),
+            .template("[{elapsed_precise}] [{bar:40}] {pos}/{len} chunks generated ({eta})")
+            .unwrap()
+            .progress_chars("=> "),
     );
 
     let users: Vec<User> = (0..num_chunks)
