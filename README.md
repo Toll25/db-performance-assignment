@@ -34,15 +34,15 @@ pg_stat_statements.track = all
 Container neustarten um die änderungen zu übernehmen
 
 ### Select *
-MongoDB: 919ms
+MongoDB: 919ms \
 PostgreSQL: 2104ms
 
 ### Select * where age < 20
-MongoDB: 1346ms
+MongoDB: 1346ms \
 PostgreSQL: 144ms   
 
 ## Indexes
 
 ### Select * where age < 20
-MongoDB: 180ms
+MongoDB: 180ms \
 PostgreSQL: 344ms ?????  
