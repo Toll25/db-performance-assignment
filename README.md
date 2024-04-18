@@ -39,10 +39,19 @@ PostgreSQL: 2104ms
 
 ### Select * where age < 20
 MongoDB: 1346ms \
-PostgreSQL: 144ms   
+PostgreSQL: 214ms   
+
+Man kann sehen, ohne index ist postgres deutlich schneller als MongoDB wenn nach einer Kondotion gesucht wird. \
+Bei einem Select * (bzw find()) ist MongoDB allerdings um einiges schneller.
 
 ## Indexes
 
+### Select *
+MongoDB: 956ms \
+PostgreSQL: 1831ms
+
 ### Select * where age < 20
 MongoDB: 180ms \
-PostgreSQL: 344ms ?????  
+PostgreSQL: 137ms
+
+Mit Indexes gewinnt MongoDB zwar sehr an performance, doch kann immer noch nicht ganz mithalten.
